@@ -26,8 +26,6 @@ public class Player_Move : MonoBehaviour
 
     Vector3 dir;
     //목적지
-    Vector3 rotatevalue;
-    //플레이어의 z축 회전값
     CollisionFlags flag;
     
     float hor, ver;
@@ -89,6 +87,7 @@ public class Player_Move : MonoBehaviour
         //y축 적용
         dir = transform.TransformDirection(dir);
         //로컬좌표계를 월드 좌표계로 변환
+        //CC는 월드좌표 기준으로 움직임
 
         flag = p_cc.Move(dir * playerSpeed * Time.deltaTime);
     }

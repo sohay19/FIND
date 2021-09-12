@@ -25,7 +25,9 @@ public class Rocate : MonoBehaviour
     //거리 표기
 
     Vector3 dis;
-    //y를 플레이어와 맞춘 출구위치
+    //y가 0인 출구위치
+    Vector3 pdis;
+    //y가 0인 플레이어 위치
     Vector3 dir;
     //플레이어->출구(y값 제외)
     Vector3 look;
@@ -40,10 +42,12 @@ public class Rocate : MonoBehaviour
     }
     void Update()
     {
-        dis = new Vector3(exit.position.x, player.transform.position.y, exit.position.z - 1.0f);
-        //y를 플레이어와 맞춘 출구위치
+        dis = new Vector3(exit.position.x, 0, exit.position.z - 1.0f);
+        //y가 0인 출구위치
+        pdis = new Vector3(player.transform.position.x, 0, player.transform.position.z);
+        //y가 0인 플레이어 위치
 
-        dir = new Vector3(dis.x, 0, dis.z) - new Vector3(player.transform.position.x, 0, player.transform.position.z);
+        dir = dis - pdis;
         dir = transform.TransformDirection(dir.normalized);
         //월드좌표로 변환
 
@@ -85,7 +89,7 @@ public class Rocate : MonoBehaviour
             }
         }
 
-        text.text = ((int)Vector3.Distance(player.transform.position, dis)).ToString() + " M";
+        text.text = ((int)Vector3.Distance(pdis, dis)).ToString() + " M";
         //출구와 플레이어 사이의 거리표기
     }
 }

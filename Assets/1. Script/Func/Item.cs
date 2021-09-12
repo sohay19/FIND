@@ -58,7 +58,6 @@ public class Item : MonoBehaviour
     //item 획득에 따른 point 증가
     //Detect에서 사용
     {
-
         if(point < 6)
         //point가 6보다 작을 경우
         {

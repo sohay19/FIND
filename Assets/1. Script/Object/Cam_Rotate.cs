@@ -43,10 +43,6 @@ public class Cam_Rotate : MonoBehaviour
         {
             sumZ = value;
         }
-        get
-        {
-            return rotateSpeed;
-        }
     }
     //Spot, Teleport »ç¿ë
 

@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 /*
  * [위치]
- * Gma
+ * Loading 씬의 GameManager
  * 
  * [기능]
+ * 비동기 씬로딩
  * 
  */
 
